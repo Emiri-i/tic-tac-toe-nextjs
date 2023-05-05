@@ -27,18 +27,20 @@ function Board() {
   return (
     <div>
       <p>{currentPlayer}</p>
-      {Array(9)
-        .fill(null)
-        .map((_, i: number) => {
-          return (
-            <Square
-              winner={winner}
-              key={i}
-              onClick={() => setSquareValue(i)}
-              value={squares[i]}
-            />
-          );
-        })}
+      <div className="grid">
+        {Array(9)
+          .fill(null)
+          .map((_, i: number) => {
+            return (
+              <Square
+                winner={winner}
+                key={i}
+                onClick={() => setSquareValue(i)}
+                value={squares[i]}
+              />
+            );
+          })}
+      </div>
     </div>
   );
 }
